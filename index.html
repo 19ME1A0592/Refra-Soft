@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RefraSoft - Accounting Software</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>RefraSoft - GST Invoice Calculator</h1>
+        
+        <!-- Invoice Calculation Section -->
+        <label for="amount">Enter Invoice Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount">
+        
+        <label for="gst">Enter GST Percentage:</label>
+        <input type="number" id="gst" placeholder="Enter GST %">
+        
+        <button onclick="calculateGST()">Calculate GST</button>
+        
+        <div id="output"></div>
+    </div>
+    
+    <div class="container">
+        <h2>Upload Invoice File</h2>
+        
+        <!-- File Upload Section -->
+        <input type="file" id="fileUpload">
+        <button onclick="uploadFile()">Upload</button>
+        
+        <div id="fileOutput"></div>
+    </div>
+    
+    <!-- JavaScript
