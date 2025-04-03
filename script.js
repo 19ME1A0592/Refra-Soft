@@ -1,5 +1,3 @@
-/* script.js */
-
 // Function to calculate GST Invoice
 function calculateGST() {
     let amount = document.getElementById('amount').value;
@@ -16,8 +14,8 @@ function calculateGST() {
     
     // Display calculated GST and total amount
     document.getElementById('output').innerHTML = `
-        GST Amount: ₹${gstAmount.toFixed(2)}<br>
-        Total Amount: ₹${total.toFixed(2)}`;
+        <strong>GST Amount:</strong> ₹${gstAmount.toFixed(2)}<br>
+        <strong>Total Amount:</strong> ₹${total.toFixed(2)}`;
 }
 
 // Function to handle file upload
@@ -32,5 +30,6 @@ function uploadFile() {
     }
     
     // Display uploaded file name
-    document.getElementById('fileOutput').innerHTML = `File Uploaded: ${file.name}`;
+    document.getElementById('fileOutput').innerHTML = `📂 <strong>File Uploaded:</strong> ${file.name}`;
 }
+
