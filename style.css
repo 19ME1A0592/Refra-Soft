@@ -1,27 +1,59 @@
-/* styles.css */
-
 /* General Page Styling */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffdde1, #fc6076);
     text-align: center;
     padding: 20px;
+    color: white;
 }
 
-/* Container Box Styling */
-.container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
+/* Header Section */
+header {
+    background: #ff6f61;
+    color: white;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    font-size: 28px;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Rotating Logo */
+.logo-container {
+    text-align: center;
     margin-bottom: 20px;
 }
+.rotating-logo {
+    width: 120px;
+    height: 120px;
+    animation: rotate 5s linear infinite;
+}
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 
-/* Header Styles */
-h1, h2 {
-    color: #333;
+/* Colorful Box Sections */
+.colorful-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    color: black;
+}
+
+/* Image Gallery */
+.image-gallery {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.gallery img {
+    width: 180px;
+    height: 120px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Input Fields & Button Styling */
