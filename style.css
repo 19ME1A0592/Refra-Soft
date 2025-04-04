@@ -1,87 +1,51 @@
-* {
-    box-sizing: border-box;
-}
-
+/* Global Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
     margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
+/* Header and Moving Logo */
 header {
-    background: linear-gradient(90deg, #007BFF, #00CFFF);
+    background-color: #333;
     color: white;
     padding: 20px;
-    text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
+#moving-logo {
+    display: inline-block;
+    font-size: 2em;
     font-weight: bold;
-    transition: color 0.3s;
+    animation: moveLogo 3s infinite alternate;
 }
 
-nav ul li a:hover {
-    color: #FFD700; /* Gold color on hover */
+/* Moving logo animation */
+@keyframes moveLogo {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); }
 }
 
+/* Sections */
 section {
-    padding: 40px;
     margin: 20px;
+    padding: 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: #007BFF;
-}
-
-#image-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.dynamic-image {
-    width: 30%;
-    height: auto;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.dynamic-image:hover {
-    transform: scale(1.05);
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(90deg, #007BFF, #00CFFF);
+/* Upload button */
+button {
+    padding: 10px 15px;
+    background: #007bff;
     color: white;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Modal styles */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-   
+button:hover {
+    background: #0056b3;
+}
