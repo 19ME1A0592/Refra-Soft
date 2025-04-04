@@ -17,6 +17,21 @@ document.querySelectorAll('nav a').forEach(anchor => {
         targetSection.scrollIntoView({ behavior: "smooth" });
     });
 });
+// Function to start scrolling text
+function startScrollingText(elementId) {
+    let container = document.getElementById(elementId);
+    let textElement = document.createElement("div");
+    textElement.classList.add("scrolling-text");
+    textElement.innerHTML = container.innerHTML;
+    container.innerHTML = "";
+    container.appendChild(textElement);
+}
+
+// Start scrolling for Vision & Mission
+window.onload = function () {
+    startScrollingText("vision");
+    startScrollingText("mission");
+};
 
 // Show an alert when the Demo file is clicked
 document.querySelector(".download-btn").addEventListener("click", function () {
