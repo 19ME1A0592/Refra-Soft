@@ -1,62 +1,81 @@
-/* Global Styling */
+/* Global Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    text-align: center;
     margin: 0;
     padding: 0;
     background: linear-gradient(to right, #ff7e5f, #feb47b);
+    text-align: center;
     color: white;
 }
 
-/* Header and Moving Logo */
+/* Header Styling */
 header {
     background-color: #222;
     padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #moving-logo {
-    display: inline-block;
     font-size: 2.5em;
     font-weight: bold;
     color: #ffdd57;
     animation: moveLogo 2s infinite alternate;
 }
 
-/* Moving logo animation */
+/* Moving Logo Animation */
 @keyframes moveLogo {
     0% { transform: scale(1); }
     100% { transform: scale(1.1); }
 }
 
-/* Sections */
+/* Section Styling */
 section {
-    margin: 20px;
-    padding: 20px;
+    padding: 30px;
     background: rgba(255, 255, 255, 0.1);
+    margin: 20px auto;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
 }
 
-/* Upload button */
-button {
-    padding: 10px 15px;
-    background: #00c9ff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Image Gallery */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.image-gallery img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Contact Section */
+#contact a {
+    color: yellow;
+    text-decoration: none;
     font-weight: bold;
 }
 
-button:hover {
-    background: #007bb5;
+#contact a:hover {
+    color: lightblue;
 }
 
-/* Gallery Images */
-#imageContainer img {
-    width: 250px;
-    height: 150px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+/* Responsive Design */
+@media (max-width: 768px) {
+    .image-gallery img {
+        width: 90%;
+        height: auto;
+    }
 }
