@@ -3,63 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RefraSoft - Accounting Software</title>
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>RefraSoft - Accounting Software</title>
 </head>
 <body>
     <header>
-        <h1>RefraSoft - Smart Accounting Solutions</h1>
+        <h1>Welcome to RefraSoft</h1>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#gst">GST Calculator</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li id="upload-section"><a href="#upload">Upload</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#upload">Upload Invoice</a></li>
+                <li><a href="#videos">Videos</a></li>
             </ul>
         </nav>
     </header>
-
-    <section id="home">
-        <h2>Welcome to RefraSoft</h2>
-        <p>Your trusted solution for GST invoicing & inventory management.</p>
-        <img src="https://source.unsplash.com/800x400/?finance,business" alt="Accounting Image">
+    <section id="products">
+        <h2>Our Products</h2>
+        <p>GSI Invoice and Inventory and Accounting Software</p>
     </section>
-
-    <section id="about">
-        <h2>About Us</h2>
-        <p>RefraSoft simplifies financial management with automation.</p>
-    </section>
-
-    <section id="features">
-        <h2>Our Features</h2>
-        <ul>
-            <li>Automated GST Calculation</li>
-            <li>Easy Invoice Management</li>
-            <li>Secure File Uploads</li>
-        </ul>
-    </section>
-
-    <section id="gst">
-        <h2>GST Calculator</h2>
-        <input type="number" id="amount" placeholder="Enter amount">
-        <input type="number" id="gst-rate" placeholder="GST %">
-        <button onclick="calculateGST()">Calculate</button>
-        <p id="gst-output"></p>
-    </section>
-
     <section id="upload">
-        <h2>Upload File (Owner Only)</h2>
-        <input type="file" id="file-input">
-        <button id="upload-btn">Upload</button>
-        <p id="upload-status"></p>
+        <h2>Upload Your Invoice</h2>
+        <input type="file" id="fileInput">
+        <button onclick="calculateGST()">Calculate GST</button>
+        <div id="output"></div>
     </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: contact@refrasoft.com</p>
+    <section id="videos">
+        <h2>Instructional Videos</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/your_video_id" frameborder="0" allowfullscreen></iframe>
     </section>
+    <footer>
+        <p>&copy; 2023 RefraSoft</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
