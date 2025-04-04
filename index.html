@@ -4,54 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RefraSoft - Accounting Software</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> 
+    <script defer src="script.js"></script> 
 </head>
 <body>
+
     <header>
-        <div class="logo-container">
-            <img src="https://cdn-icons-png.flaticon.com/512/7768/7768354.png" alt="RefraSoft Logo" class="rotating-logo">
-        </div>
         <h1>Welcome to RefraSoft</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#demo-files">Demo Files</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#audio">Audio</a></li>
+                <li id="upload-section"><a href="#upload">Upload</a></li> 
+            </ul>
+        </nav>
     </header>
-    
-    <section class="about-us colorful-box">
-        <h2>About Us</h2>
-        <p>RefraSoft is an innovative accounting software designed for <strong>Mining Refactors, Wholesale Sellers, and Retail Shops</strong>. Our platform automates financial management, making invoicing and billing effortless.</p>
+
+    <section id="home">
+        <h2>Accounting Software for GST Invoice & Inventory</h2>
+        <p>Manage your business with automated accounting solutions.</p>
     </section>
-    
-    <section class="vision-mission colorful-box">
-        <h2>Our Vision</h2>
-        <p>To revolutionize accounting solutions with automation, accuracy, and simplicity.</p>
-        <h2>Our Mission</h2>
-        <p>To provide an efficient and user-friendly platform for businesses to manage invoices and billing seamlessly.</p>
+
+    <!-- Demo Files Section (Users can only view/download) -->
+    <section id="demo-files">
+        <h2>Demo Files</h2>
+        <ul id="file-list">
+            <li><a href="uploads/demo_invoice.xlsx" download>Download Sample Invoice</a></li>
+            <li><a href="uploads/demo_inventory.csv" download>Download Sample Inventory</a></li>
+        </ul>
     </section>
-    
-    <section class="image-gallery colorful-box">
-        <h2>Accounting & Billing in Action</h2>
-        <div class="gallery">
-            <img src="accounting1.jpg" alt="Accounting Image 1">
-            <img src="billing.jpg" alt="Billing Image">
-            <img src="finance.jpg" alt="Finance Image">
-        </div>
+
+    <!-- Videos Section (Only viewable by users) -->
+    <section id="videos">
+        <h2>Demo Videos</h2>
+        <video controls>
+            <source src="uploads/demo_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </section>
-    
-    <div class="container colorful-box">
-        <h2>GST Invoice Calculator</h2>
-        <label for="amount">Enter Invoice Amount:</label>
-        <input type="number" id="amount" placeholder="Enter amount">
-        <label for="gst">Enter GST Percentage:</label>
-        <input type="number" id="gst" placeholder="Enter GST %">
-        <button onclick="calculateGST()">Calculate GST</button>
-        <div id="output"></div>
-    </div>
-    
-    <div class="container colorful-box">
-        <h2>Upload Invoice File</h2>
-        <input type="file" id="fileUpload">
-        <button onclick="uploadFile()">Upload</button>
-        <div id="fileOutput"></div>
-    </div>
-    
-    <script src="script.js"></script>
+
+    <!-- Audio Section (Only viewable by users) -->
+    <section id="audio">
+        <h2>Demo Audio</h2>
+        <audio controls>
+            <source src="uploads/demo_audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </section>
+
+    <!-- File Upload Section (Only for the Owner) -->
+    <section id="upload">
+        <h2>Upload Files (Owner Only)</h2>
+        <form id="upload-form">
+            <input type="file" id="file-input">
+            <button type="submit">Upload</button>
+        </form>
+        <p id="upload-status"></p>
+    </section>
+
 </body>
 </html>
