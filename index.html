@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RefraSoft - Accounting Software</title>
-    <link rel="stylesheet" href="styles.css"> 
-    <script defer src="script.js"></script> 
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-
     <header>
-        <h1>Welcome to RefraSoft</h1>
+        <h1>RefraSoft - Smart Accounting Solutions</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#demo-files">Demo Files</a></li>
-                <li><a href="#videos">Videos</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
                 <li><a href="#gst">GST Calculator</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li id="upload-section"><a href="#upload">Upload</a></li>
@@ -24,68 +22,44 @@
         </nav>
     </header>
 
-    <!-- Home Section -->
     <section id="home">
-        <h2>RefraSoft - Simplified Accounting Software</h2>
-        <p>Designed for Mining Refactors, Wholesale Sellers, and Retail Shops.</p>
-        <img src="https://source.unsplash.com/800x400/?business,finance" alt="Accounting Software">
+        <h2>Welcome to RefraSoft</h2>
+        <p>Your trusted solution for GST invoicing & inventory management.</p>
+        <img src="https://source.unsplash.com/800x400/?finance,business" alt="Accounting Image">
     </section>
 
-    <!-- About Us Section -->
     <section id="about">
-        <h2>About Our Company</h2>
-        <p>RefraSoft provides modern accounting solutions for businesses to automate GST invoices and inventory management.</p>
-        <h3>Our Vision</h3>
-        <p>To revolutionize financial management with cutting-edge technology.</p>
-        <h3>Our Mission</h3>
-        <p>Empower businesses with easy and automated accounting solutions.</p>
+        <h2>About Us</h2>
+        <p>RefraSoft simplifies financial management with automation.</p>
     </section>
 
-    <!-- Demo Files Section -->
-    <section id="demo-files">
-        <h2>Download Demo Files</h2>
+    <section id="features">
+        <h2>Our Features</h2>
         <ul>
-            <li><a href="uploads/demo_invoice.xlsx" download>Sample Invoice</a></li>
-            <li><a href="uploads/demo_inventory.csv" download>Sample Inventory</a></li>
+            <li>Automated GST Calculation</li>
+            <li>Easy Invoice Management</li>
+            <li>Secure File Uploads</li>
         </ul>
     </section>
 
-    <!-- Videos Section -->
-    <section id="videos">
-        <h2>Demo Videos</h2>
-        <video controls>
-            <source src="uploads/demo_video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </section>
-
-    <!-- GST Calculator -->
     <section id="gst">
-        <h2>GST Invoice Calculator</h2>
-        <label for="amount">Enter Amount: </label>
+        <h2>GST Calculator</h2>
         <input type="number" id="amount" placeholder="Enter amount">
-        <label for="gst-rate">GST Rate (%): </label>
-        <input type="number" id="gst-rate" placeholder="Enter GST rate">
-        <button onclick="calculateGST()">Calculate GST</button>
+        <input type="number" id="gst-rate" placeholder="GST %">
+        <button onclick="calculateGST()">Calculate</button>
         <p id="gst-output"></p>
     </section>
 
-    <!-- Upload Section (Owner Only) -->
     <section id="upload">
-        <h2>Upload Files (Owner Only)</h2>
-        <form id="upload-form">
-            <input type="file" id="file-input">
-            <button type="submit">Upload</button>
-        </form>
+        <h2>Upload File (Owner Only)</h2>
+        <input type="file" id="file-input">
+        <button id="upload-btn">Upload</button>
         <p id="upload-status"></p>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:contact@refrasoft.com">psrk@refrasoft.com</a></p>
-        <p>Follow us on <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a></p>
+        <p>Email: contact@refrasoft.com</p>
     </section>
-
 </body>
 </html>
