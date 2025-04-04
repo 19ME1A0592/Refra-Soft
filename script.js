@@ -1,59 +1,39 @@
-// Moving logo effect
-let logo = document.getElementById("moving-logo");
-let direction = 1;
-setInterval(() => {
-    let currentSize = parseFloat(window.getComputedStyle(logo).fontSize);
-    if (currentSize >= 60) direction = -1;
-    if (currentSize <= 30) direction = 1;
-    logo.style.fontSize = (currentSize + direction * 2) + "px";
-}, 200);
+/* JavaScript for Dynamic Effects */
+document.addEventListener("DOMContentLoaded", function() {
+    // Moving Logo Animation
+    let logo = document.getElementById("moving-logo");
+    let direction = 1;
+    setInterval(() => {
+        let leftPos = parseInt(getComputedStyle(logo).left) || 0;
+        logo.style.transform = `translateX(${leftPos + 5 * direction}px)`;
+        if (leftPos >= 20 || leftPos <= -20) direction *= -1;
+    }, 500);
 
-// Smooth scrolling for navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        let targetId = this.getAttribute('href').substring(1);
-        let targetSection = document.getElementById(targetId);
-        targetSection.scrollIntoView({ behavior: "smooth" });
-    });
-});
-// Function to start scrolling text
-function startScrollingText(elementId) {
-    let container = document.getElementById(elementId);
-    let textElement = document.createElement("div");
-    textElement.classList.add("scrolling-text");
-    textElement.innerHTML = container.innerHTML;
-    container.innerHTML = "";
-    container.appendChild(textElement);
-}
-
-// Start scrolling for Vision & Mission
-window.onload = function () {
+    // Scrolling Vision & Mission Text
+    function startScrollingText(elementId) {
+        let container = document.getElementById(elementId);
+        let textElement = document.createElement("div");
+        textElement.classList.add("scrolling-text");
+        textElement.innerHTML = container.innerHTML;
+        container.innerHTML = "";
+        container.appendChild(textElement);
+    }
     startScrollingText("vision");
     startScrollingText("mission");
-};
 
-// Show an alert when the Demo file is clicked
-document.querySelector(".download-btn").addEventListener("click", function () {
-    alert("Your demo file is downloading...");
-});
+    // Smooth Scroll for Navigation
+    document.querySelectorAll("nav a").forEach(anchor => {
+        anchor.addEventListener("click", function(e) {
+            e.preventDefault();
+            let targetId = this.getAttribute("href").substring(1);
+            document.getElementById(targetId).scrollIntoView({ behavior: "smooth" });
+        });
+    });
 
-// Highlight active section on scroll
-window.addEventListener("scroll", () => {
-    let sections = document.querySelectorAll("section");
-    let scrollPosition = window.scrollY + 200;
-
-    sections.forEach(section => {
-        let id = section.getAttribute("id");
-        let navLink = document.querySelector(`nav a[href="#${id}"]`);
-        if (navLink) {
-            let sectionTop = section.offsetTop;
-            let sectionHeight = section.offsetHeight;
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                navLink.style.color = "lightblue";
-            } else {
-                navLink.style.color = "#ffdd57";
-            }
-        }
+    // Image Hover Effect
+    let images = document.querySelectorAll(".image-gallery img");
+    images.forEach(img => {
+        img.addEventListener("mouseover", () => img.style.transform = "scale(1.2)");
+        img.addEventListener("mouseout", () => img.style.transform = "scale(1)");
     });
 });
