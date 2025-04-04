@@ -1,34 +1,44 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Moving Logo Hover Effect
-    const logo = document.getElementById("moving-logo");
-    logo.addEventListener("mouseover", () => {
-        logo.style.transform = "scale(1.2)";
-    });
-    logo.addEventListener("mouseout", () => {
-        logo.style.transform = "scale(1)";
-    });
+// Moving logo effect
+let logo = document.getElementById("moving-logo");
+let direction = 1;
+setInterval(() => {
+    let currentSize = parseFloat(window.getComputedStyle(logo).fontSize);
+    if (currentSize >= 60) direction = -1;
+    if (currentSize <= 30) direction = 1;
+    logo.style.fontSize = (currentSize + direction * 2) + "px";
+}, 200);
 
-    // Image Fade-in Effect
-    const images = document.querySelectorAll(".image-gallery img");
-    images.forEach(img => {
-        img.style.opacity = "0";
-        img.style.transition = "opacity 1.5s ease-in-out";
+// Smooth scrolling for navigation
+document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        let targetId = this.getAttribute('href').substring(1);
+        let targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: "smooth" });
     });
+});
 
-    // Fade in images on load
-    window.addEventListener("load", () => {
-        images.forEach(img => {
-            img.style.opacity = "1";
-        });
-    });
+// Show an alert when the Demo file is clicked
+document.querySelector(".download-btn").addEventListener("click", function () {
+    alert("Your demo file is downloading...");
+});
 
-    // Smooth Scroll to Sections
-    document.querySelectorAll("nav a").forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute("href")).scrollIntoView({
-                behavior: "smooth"
-            });
-        });
+// Highlight active section on scroll
+window.addEventListener("scroll", () => {
+    let sections = document.querySelectorAll("section");
+    let scrollPosition = window.scrollY + 200;
+
+    sections.forEach(section => {
+        let id = section.getAttribute("id");
+        let navLink = document.querySelector(`nav a[href="#${id}"]`);
+        if (navLink) {
+            let sectionTop = section.offsetTop;
+            let sectionHeight = section.offsetHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLink.style.color = "lightblue";
+            } else {
+                navLink.style.color = "#ffdd57";
+            }
+        }
     });
 });
