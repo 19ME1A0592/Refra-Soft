@@ -3,32 +3,57 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to right, #ff758c, #ff7eb3, #feb47b);
     text-align: center;
     color: white;
 }
 
 /* Header Styling */
 header {
-    background-color: #222;
+    background: #222;
     padding: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #moving-logo {
-    font-size: 2.5em;
+    font-size: 3em;
     font-weight: bold;
     color: #ffdd57;
-    animation: moveLogo 2s infinite alternate;
+    animation: bounce 2s infinite alternate;
 }
 
-/* Moving Logo Animation */
-@keyframes moveLogo {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.1); }
+.tagline {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ff7e5f;
 }
 
-/* Section Styling */
+/* Bouncing Logo Animation */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Navigation Menu */
+nav {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+}
+
+nav a {
+    color: #ffdd57;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: lightblue;
+}
+
+/* Sections */
 section {
     padding: 30px;
     background: rgba(255, 255, 255, 0.1);
