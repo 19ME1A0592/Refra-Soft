@@ -12,26 +12,30 @@ body {
 header {
     background: #222;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
 }
 
 #moving-logo {
     font-size: 3em;
     font-weight: bold;
     color: #ffdd57;
-    animation: bounce 2s infinite alternate;
+    animation: moveText 2s infinite alternate;
 }
 
-.tagline {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #ff7e5f;
-}
-
-/* Bouncing Logo Animation */
-@keyframes bounce {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
+/* Animation */
+@keyframes moveText {
+    from { transform: translateX(-10px); }
+    to { transform: translateX(10px); }
 }
 
 /* Navigation Menu */
@@ -47,19 +51,57 @@ nav a {
     padding: 10px 20px;
     margin: 0 10px;
     display: inline-block;
+    transition: 0.3s;
 }
 
 nav a:hover {
     color: lightblue;
+    text-decoration: underline;
 }
 
-/* Sections */
-section {
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.1);
-    margin: 20px auto;
+/* Colored Sections */
+.colored-box {
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* About Us */
+.about-box {
+    background: #ffffff;
+    color: black;
+}
+
+/* Vision */
+.vision-box {
+    background: #ffeb3b;
+    color: #222;
+}
+
+/* Mission */
+.mission-box {
+    background: #4caf50;
+    color: white;
+}
+
+/* Services or Products Section */
+#services {
+    background: #3498db;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 80%;
+    color: white;
+}
+
+/* Clients */
+#clients {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
     max-width: 80%;
 }
 
@@ -73,8 +115,8 @@ section {
 }
 
 .image-gallery img {
-    width: 300px;
-    height: 200px;
+    width: 250px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -84,6 +126,22 @@ section {
 .image-gallery img:hover {
     transform: scale(1.1);
     filter: brightness(1.2);
+}
+
+/* Demo File Button */
+.download-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: #e91e63;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #c2185b;
 }
 
 /* Contact Section */
