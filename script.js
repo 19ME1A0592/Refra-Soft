@@ -1,35 +1,23 @@
-// Function to calculate GST Invoice
-function calculateGST() {
-    let amount = document.getElementById('amount').value;
-    let gst = document.getElementById('gst').value;
-    
-    // Validate input fields
-    if(amount === '' || gst === '') {
-        alert('Please enter both values');
-        return;
-    }
-    
-    let gstAmount = (amount * gst) / 100;
-    let total = parseFloat(amount) + parseFloat(gstAmount);
-    
-    // Display calculated GST and total amount
-    document.getElementById('output').innerHTML = `
-        <strong>GST Amount:</strong> ₹${gstAmount.toFixed(2)}<br>
-        <strong>Total Amount:</strong> ₹${total.toFixed(2)}`;
-}
+document.addEventListener("DOMContentLoaded", function () {
+    const uploadSection = document.getElementById("upload");
+    const uploadForm = document.getElementById("upload-form");
+    const uploadStatus = document.getElementById("upload-status");
 
-// Function to handle file upload
-function uploadFile() {
-    let fileInput = document.getElementById('fileUpload');
-    let file = fileInput.files[0];
-    
-    // Check if a file is selected
-    if (!file) {
-        alert('Please select a file to upload');
-        return;
-    }
-    
-    // Display uploaded file name
-    document.getElementById('fileOutput').innerHTML = `📂 <strong>File Uploaded:</strong> ${file.name}`;
-}
+    // Simulate login (Only Owner can upload)
+    const isOwner = confirm("Are you the owner? Click OK to manage files.");
 
+    if (!isOwner) {
+        uploadSection.style.display = "none";
+    }
+
+    // File Upload Simulation
+    uploadForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const fileInput = document.getElementById("file-input");
+        if (fileInput.files.length > 0) {
+            uploadStatus.innerText = "✅ File uploaded successfully!";
+        } else {
+            uploadStatus.innerText = "❌ Please select a file to upload.";
+        }
+    });
+});
