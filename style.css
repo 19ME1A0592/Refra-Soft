@@ -53,6 +53,27 @@ nav a {
     display: inline-block;
     transition: 0.3s;
 }
+
+nav a:hover {
+    color: lightblue;
+    text-decoration: underline;
+}
+
+/* Colored Sections */
+.colored-box {
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* About Us */
+.about-box {
+    background: #ffffff;
+    color: black;
+}
+
 /* Vision & Mission Scrolling Box */
 .scroll-box {
     width: 80%;
@@ -93,38 +114,6 @@ nav a {
 @keyframes scrollText {
     0% { transform: translateY(100%); }
     100% { transform: translateY(-100%); }
-}
-
-nav a:hover {
-    color: lightblue;
-    text-decoration: underline;
-}
-
-/* Colored Sections */
-.colored-box {
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 80%;
-    margin: 20px auto;
-    text-align: center;
-}
-
-/* About Us */
-.about-box {
-    background: #ffffff;
-    color: black;
-}
-
-/* Vision */
-.vision-box {
-    background: #ffeb3b;
-    color: #222;
-}
-
-/* Mission */
-.mission-box {
-    background: #4caf50;
-    color: white;
 }
 
 /* Services or Products Section */
