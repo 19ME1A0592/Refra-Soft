@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
     color: white;
     text-align: center;
     margin: 0;
@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     padding: 15px 0;
 }
 
@@ -36,13 +36,17 @@ section {
     border-radius: 10px;
 }
 
-video, audio {
-    width: 80%;
-    margin-top: 10px;
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+video {
+    width: 100%;
 }
 
 button {
-    background: #ff4081;
+    background: #00c6ff;
     border: none;
     padding: 10px;
     color: white;
@@ -51,5 +55,5 @@ button {
 }
 
 button:hover {
-    background: #e73370;
+    background: #0072ff;
 }
