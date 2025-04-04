@@ -14,29 +14,43 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
                 <li><a href="#demo-files">Demo Files</a></li>
                 <li><a href="#videos">Videos</a></li>
-                <li><a href="#audio">Audio</a></li>
-                <li id="upload-section"><a href="#upload">Upload</a></li> 
+                <li><a href="#gst">GST Calculator</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li id="upload-section"><a href="#upload">Upload</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Home Section -->
     <section id="home">
-        <h2>Accounting Software for GST Invoice & Inventory</h2>
-        <p>Manage your business with automated accounting solutions.</p>
+        <h2>RefraSoft - Simplified Accounting Software</h2>
+        <p>Designed for Mining Refactors, Wholesale Sellers, and Retail Shops.</p>
+        <img src="https://source.unsplash.com/800x400/?business,finance" alt="Accounting Software">
     </section>
 
-    <!-- Demo Files Section (Users can only view/download) -->
+    <!-- About Us Section -->
+    <section id="about">
+        <h2>About Our Company</h2>
+        <p>RefraSoft provides modern accounting solutions for businesses to automate GST invoices and inventory management.</p>
+        <h3>Our Vision</h3>
+        <p>To revolutionize financial management with cutting-edge technology.</p>
+        <h3>Our Mission</h3>
+        <p>Empower businesses with easy and automated accounting solutions.</p>
+    </section>
+
+    <!-- Demo Files Section -->
     <section id="demo-files">
-        <h2>Demo Files</h2>
-        <ul id="file-list">
-            <li><a href="uploads/demo_invoice.xlsx" download>Download Sample Invoice</a></li>
-            <li><a href="uploads/demo_inventory.csv" download>Download Sample Inventory</a></li>
+        <h2>Download Demo Files</h2>
+        <ul>
+            <li><a href="uploads/demo_invoice.xlsx" download>Sample Invoice</a></li>
+            <li><a href="uploads/demo_inventory.csv" download>Sample Inventory</a></li>
         </ul>
     </section>
 
-    <!-- Videos Section (Only viewable by users) -->
+    <!-- Videos Section -->
     <section id="videos">
         <h2>Demo Videos</h2>
         <video controls>
@@ -45,16 +59,18 @@
         </video>
     </section>
 
-    <!-- Audio Section (Only viewable by users) -->
-    <section id="audio">
-        <h2>Demo Audio</h2>
-        <audio controls>
-            <source src="uploads/demo_audio.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+    <!-- GST Calculator -->
+    <section id="gst">
+        <h2>GST Invoice Calculator</h2>
+        <label for="amount">Enter Amount: </label>
+        <input type="number" id="amount" placeholder="Enter amount">
+        <label for="gst-rate">GST Rate (%): </label>
+        <input type="number" id="gst-rate" placeholder="Enter GST rate">
+        <button onclick="calculateGST()">Calculate GST</button>
+        <p id="gst-output"></p>
     </section>
 
-    <!-- File Upload Section (Only for the Owner) -->
+    <!-- Upload Section (Owner Only) -->
     <section id="upload">
         <h2>Upload Files (Owner Only)</h2>
         <form id="upload-form">
@@ -62,6 +78,13 @@
             <button type="submit">Upload</button>
         </form>
         <p id="upload-status"></p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:contact@refrasoft.com">psrk@refrasoft.com</a></p>
+        <p>Follow us on <a href="#">LinkedIn</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a></p>
     </section>
 
 </body>
