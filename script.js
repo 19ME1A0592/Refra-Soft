@@ -1,40 +1,23 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const uploadSection = document.getElementById("upload");
-    const uploadForm = document.getElementById("upload-form");
-    const uploadStatus = document.getElementById("upload-status");
-
-    // Simulate login (Only Owner can upload)
-    const isOwner = confirm("Are you the owner? Click OK to manage files.");
-
-    if (!isOwner) {
-        uploadSection.style.display = "none";
-    }
-
-    // File Upload Simulation
-    uploadForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        const fileInput = document.getElementById("file-input");
-        if (fileInput.files.length > 0) {
-            uploadStatus.innerText = "✅ File uploaded successfully!";
-        } else {
-            uploadStatus.innerText = "❌ Please select a file to upload.";
-        }
-    });
-});
-
-// GST Calculation Function
 function calculateGST() {
-    const amount = parseFloat(document.getElementById("amount").value);
-    const gstRate = parseFloat(document.getElementById("gst-rate").value);
+    let amount = document.getElementById("amount").value;
+    let gstRate = document.getElementById("gst-rate").value;
     
-    if (isNaN(amount) || isNaN(gstRate)) {
-        document.getElementById("gst-output").innerText = "❌ Please enter valid numbers.";
+    if (amount === "" || gstRate === "") {
+        alert("Please enter both amount and GST rate.");
         return;
     }
-
-    const gstAmount = (amount * gstRate) / 100;
-    const totalAmount = amount + gstAmount;
-
-    document.getElementById("gst-output").innerText = 
-        `GST: ₹${gstAmount.toFixed(2)}, Total Amount: ₹${totalAmount.toFixed(2)}`;
+    
+    let gstAmount = (amount * gstRate) / 100;
+    let totalAmount = parseFloat(amount) + gstAmount;
+    
+    document.getElementById("gst-output").innerHTML = `GST: ₹${gstAmount.toFixed(2)} | Total: ₹${totalAmount.toFixed(2)}`;
 }
+
+document.getElementById("upload-btn").addEventListener("click", function() {
+    let fileInput = document.getElementById("file-input");
+    if (fileInput.files.length === 0) {
+        alert("Please select a file to upload.");
+    } else {
+        document.getElementById("upload-status").innerHTML = "File uploaded successfully!";
+    }
+});
