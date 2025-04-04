@@ -1,49 +1,42 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//     // Moving logo effect (extra movement on hover)
-//     const logo = document.getElementById("moving-logo");
-//     logo.addEventListener("mouseover", () => {
-//         logo.style.transform = "translateX(50px)";
-//     });
-//     logo.addEventListener("mouseout", () => {
-//         logo.style.transform = "translateX(0)";
-//     });
+document.addEventListener("DOMContentLoaded", function () {
+    // Moving logo hover effect
+    const logo = document.getElementById("moving-logo");
+    logo.addEventListener("mouseover", () => {
+        logo.style.transform = "scale(1.2)";
+    });
+    logo.addEventListener("mouseout", () => {
+        logo.style.transform = "scale(1)";
+    });
 
-//     // File Upload and Display for Download
-//     const uploadFile = document.getElementById("uploadFile");
-//     const uploadBtn = document.getElementById("uploadBtn");
-//     const fileList = document.getElementById("fileList");
+    // File Upload and Display for Download
+    const uploadFile = document.getElementById("uploadFile");
+    const uploadBtn = document.getElementById("uploadBtn");
+    const fileList = document.getElementById("fileList");
 
-//     uploadBtn.addEventListener("click", () => {
-//         if (uploadFile.files.length > 0) {
-//             const file = uploadFile.files[0];
-//             const fileLink = document.createElement("a");
-//             fileLink.href = URL.createObjectURL(file);
-//             fileLink.download = file.name;
-//             fileLink.textContent = `Download ${file.name}`;
-//             fileList.appendChild(fileLink);
-//             fileList.appendChild(document.createElement("br"));
-//         } else {
-//             alert("Please select a file to upload.");
-//         }
-//     });
-// });
-
-async function fetchGoogleImages(query) {
-    const apiKey = "YOUR_GOOGLE_API_KEY"; // Replace with your Google API Key
-    const searchEngineId = "YOUR_CSE_ID"; // Replace with your Google Custom Search Engine ID
-    const url = `https://www.googleapis.com/customsearch/v1?q=${query}&cx=${searchEngineId}&searchType=image&key=${apiKey}`;
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        if (data.items) {
-            document.getElementById("imageContainer").innerHTML = 
-                `<img src="${data.items[0].link}" alt="Google Image">`;
+    uploadBtn.addEventListener("click", () => {
+        if (uploadFile.files.length > 0) {
+            const file = uploadFile.files[0];
+            const fileLink = document.createElement("a");
+            fileLink.href = URL.createObjectURL(file);
+            fileLink.download = file.name;
+            fileLink.textContent = `Download ${file.name}`;
+            fileList.appendChild(fileLink);
+            fileList.appendChild(document.createElement("br"));
+        } else {
+            alert("Please select a file to upload.");
         }
-    } catch (error) {
-        console.error("Error fetching image:", error);
+    });
+
+    // Fetch Random Images for Gallery
+    async function fetchImages() {
+        const query = "technology"; // Change the keyword for different images
+        const url = `https://source.unsplash.com/250x150/?${query}`;
+        for (let i = 0; i < 4; i++) {
+            const img = document.createElement("img");
+            img.src = url;
+            img.alt = "Gallery Image";
+            document.getElementById("imageContainer").appendChild(img);
+        }
     }
-}
-
-fetchGoogleImages("Accounting Software");
-
+    fetchImages();
+});
