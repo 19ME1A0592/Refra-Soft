@@ -21,3 +21,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+// GST Calculation Function
+function calculateGST() {
+    const amount = parseFloat(document.getElementById("amount").value);
+    const gstRate = parseFloat(document.getElementById("gst-rate").value);
+    
+    if (isNaN(amount) || isNaN(gstRate)) {
+        document.getElementById("gst-output").innerText = "❌ Please enter valid numbers.";
+        return;
+    }
+
+    const gstAmount = (amount * gstRate) / 100;
+    const totalAmount = amount + gstAmount;
+
+    document.getElementById("gst-output").innerText = 
+        `GST: ₹${gstAmount.toFixed(2)}, Total Amount: ₹${totalAmount.toFixed(2)}`;
+}
