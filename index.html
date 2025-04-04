@@ -11,29 +11,45 @@
         <h1>Welcome to RefraSoft</h1>
         <nav>
             <ul>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#upload">Upload Invoice</a></li>
-                <li><a href="#videos">Videos</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#gallery">Gallery</a></li>
             </ul>
         </nav>
     </header>
-    <section id="products">
-        <h2>Our Products</h2>
-        <p>GSI Invoice and Inventory and Accounting Software</p>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>RefraSoft is dedicated to providing innovative accounting solutions for businesses.</p>
     </section>
-    <section id="upload">
-        <h2>Upload Your Invoice</h2>
-        <input type="file" id="fileInput">
-        <button onclick="calculateGST()">Calculate GST</button>
-        <div id="output"></div>
+    
+    <section id="vision">
+        <h2>Vision</h2>
+        <p>To be the leading provider of accounting software that empowers businesses to manage their finances efficiently.</p>
     </section>
-    <section id="videos">
-        <h2>Instructional Videos</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/your_video_id" frameborder="0" allowfullscreen></iframe>
+    
+    <section id="mission">
+        <h2>Mission</h2>
+        <p>Our mission is to simplify accounting processes through user-friendly software solutions.</p>
     </section>
+    
+    <section id="gallery">
+        <h2>Image Gallery</h2>
+        <div id="image-container"></div>
+        <button id="load-more">Load More Images</button>
+    </section>
+    
+    <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-image">
+        <div id="caption"></div>
+    </div>
+    
     <footer>
-        <p>&copy; 2023 RefraSoft</p>
+        <p>&copy; 2025 RefraSoft</p>
     </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
