@@ -3,53 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>RefraSoft - Accounting Software</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Welcome to RefraSoft</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#mission">Mission</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-            </ul>
-        </nav>
+        <h1 id="moving-logo">RefraSoft</h1>
     </header>
     
     <section id="about">
         <h2>About Us</h2>
-        <p>RefraSoft is dedicated to providing innovative accounting solutions for businesses.</p>
+        <p>RefraSoft provides top-notch accounting software for mining refactors, wholesalers, and retail shops.</p>
     </section>
     
-    <section id="vision">
-        <h2>Vision</h2>
-        <p>To be the leading provider of accounting software that empowers businesses to manage their finances efficiently.</p>
+    <section id="mission-vision">
+        <h2>Our Mission</h2>
+        <p>To simplify accounting with automated solutions.</p>
+        <h2>Our Vision</h2>
+        <p>To be the leading provider of smart accounting software.</p>
     </section>
     
-    <section id="mission">
-        <h2>Mission</h2>
-        <p>Our mission is to simplify accounting processes through user-friendly software solutions.</p>
+    <section id="demo">
+        <h2>Download Demo Files</h2>
+        <input type="file" id="uploadFile" />
+        <button id="uploadBtn">Upload</button>
+        <div id="fileList"></div>
     </section>
     
-    <section id="gallery">
-        <h2>Image Gallery</h2>
-        <div id="image-container"></div>
-        <button id="load-more">Load More Images</button>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href="mailto:support@refrasoft.com">support@refrasoft.com</a></p>
     </section>
-    
-    <div id="image-modal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modal-image">
-        <div id="caption"></div>
-    </div>
-    
-    <footer>
-        <p>&copy; 2025 RefraSoft</p>
-    </footer>
-    
-    <script src="script.js"></script>
 </body>
 </html>
